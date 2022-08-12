@@ -92,18 +92,30 @@ Type: `string`
 
 Default: `"arn:aws:sns:region-name:XXXX:cloudwatch-topic"`
 
+### <a name="input_use_sns"></a> [use\_sns](#input\_use\_sns)
+
+Description: Use SNS for notifications
+
+Type: `bool`
+
+Default: `true`
+
 ## Outputs
 
 The following outputs are exported:
 
-### <a name="output_cloudwatch_alarm_arn"></a> [cloudwatch\_alarm\_arn](#output\_cloudwatch\_alarm\_arn)
+### <a name="output_cloudwatch_alarm_cpu_arn"></a> [cloudwatch\_alarm\_cpu\_arn](#output\_cloudwatch\_alarm\_cpu\_arn)
 
-Description: Output aws cloudwatch alarm arn
+Description: Output aws cloudwatch alarm for cpuUtilization arn
 
-### <a name="output_cloudwatch_alarm_id"></a> [cloudwatch\_alarm\_id](#output\_cloudwatch\_alarm\_id)
+### <a name="output_cloudwatch_alarm_cpu_id"></a> [cloudwatch\_alarm\_cpu\_id](#output\_cloudwatch\_alarm\_cpu\_id)
 
-Description: n/a
+Description: Output aws cloudwatch alarm for cpuUtilization id
 
-### <a name="output_cloudwatch_alarm_name"></a> [cloudwatch\_alarm\_name](#output\_cloudwatch\_alarm\_name)
+### <a name="output_cloudwatch_alarm_task_arn"></a> [cloudwatch\_alarm\_task\_arn](#output\_cloudwatch\_alarm\_task\_arn)
 
-Description: n/a
+Description: Output aws cloudwatch alarm for taskCount arn
+
+### <a name="output_cloudwatch_alarm_task_id"></a> [cloudwatch\_alarm\_task\_id](#output\_cloudwatch\_alarm\_task\_id)
+
+Description: Output aws cloudwatch alarm for taskCount id
