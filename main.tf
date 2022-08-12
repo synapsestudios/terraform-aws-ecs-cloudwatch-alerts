@@ -14,6 +14,7 @@ provider "aws" {
 }
 
 resource "aws_sns_topic_subscription" "sns-subscription" {
+  count     = var.use_sns ? 1 : 0
   topic_arn = var.sns_arn
   protocol  = "email"
   endpoint  = var.alert_email
@@ -30,8 +31,8 @@ resource "aws_cloudwatch_metric_alarm" "task-count-alarm" {
   threshold           = var.desired_task_threshold
   alarm_description   = "This metric monitors current running task count for the ${var.service_name} Service"
   actions_enabled     = "true"
-  alarm_actions       = [var.sns_arn]
-  ok_actions          = [var.sns_arn]
+  alarm_actions       = var.use_sns ? [var.sns_arn] : []
+  ok_actions          = var.use_sns ? [var.sns_arn] : []
   dimensions = {
     "ClusterName" = var.cluster_name
     "ServiceName" = var.service_name
@@ -49,8 +50,8 @@ resource "aws_cloudwatch_metric_alarm" "cpu-utilization-alarm" {
   threshold           = var.cpu_utilization_threshold
   alarm_description   = "This metric monitors current CPU utilization for the ${var.service_name} Service"
   actions_enabled     = "true"
-  alarm_actions       = [var.sns_arn]
-  ok_actions          = [var.sns_arn]
+  alarm_actions       = var.use_sns ? [var.sns_arn] : []
+  ok_actions          = var.use_sns ? [var.sns_arn] : []
   dimensions = {
     "ClusterName" = var.cluster_name
     "ServiceName" = var.service_name
