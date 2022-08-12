@@ -1,5 +1,10 @@
 # Create variables here
 
+variable "use_sns" {
+  description = "Use SNS for notifications"
+  default     = true
+}
+
 variable "sns_arn" {
   type        = string
   description = "Full arn of the desired sns topic to subscribe alarm to (Example: arn:aws:sns:region-name:XXXX:cloudwatch-topic)"
