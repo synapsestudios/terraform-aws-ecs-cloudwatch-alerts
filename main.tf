@@ -9,10 +9,6 @@
 # https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/US_SetupSNS.html
 ##################################################################
 
-provider "aws" {
-  region = var.aws_region
-}
-
 resource "aws_sns_topic_subscription" "sns-subscription" {
   count     = var.use_sns ? 1 : 0
   topic_arn = var.sns_arn

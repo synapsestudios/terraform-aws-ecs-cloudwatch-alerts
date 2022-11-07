@@ -35,12 +35,6 @@ variable "cpu_utilization_threshold" {
   default     = "90"
 }
 
-variable "aws_region" {
-  type        = string
-  description = "Specify what region to create resources in"
-  default     = "us-west-2"
-}
-
 variable "alert_email" {
   type        = string
   description = "Specify the email you'd like the alerts to go to"
