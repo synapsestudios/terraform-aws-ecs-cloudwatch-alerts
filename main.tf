@@ -10,7 +10,7 @@
 ##################################################################
 
 resource "aws_sns_topic_subscription" "sns-subscription" {
-  count     = var.use_sns ? 1 : 0
+  count     = var.create_sns_subscription ? 1 : 0
   topic_arn = var.sns_arn
   protocol  = "email"
   endpoint  = var.alert_email

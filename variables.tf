@@ -1,5 +1,10 @@
 # Create variables here
 
+variable "create_sns_subscription" {
+  description = "Set to true to create a sns subscription to the topic for created alarms"
+  default     = true
+}
+
 variable "use_sns" {
   description = "Use SNS for notifications"
   default     = true
@@ -37,6 +42,6 @@ variable "cpu_utilization_threshold" {
 
 variable "alert_email" {
   type        = string
-  description = "Specify the email you'd like the alerts to go to"
+  description = "Specify the email you'd like the alerts to go to (Unneccessary if create_sns_subscription is false)"
   default     = "alerts@synapsestudios.com"
 }
