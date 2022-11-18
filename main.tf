@@ -17,7 +17,7 @@ resource "aws_sns_topic_subscription" "sns-subscription" {
 }
 
 resource "aws_cloudwatch_metric_alarm" "task-count-alarm" {
-  alarm_name          = "runningTaskCount-${var.service_name}-${var.env != null ? format("%s/%s", "-", var.env) : var.env}-alarm"
+  alarm_name          = "runningTaskCount-${var.service_name}${var.env != null ? format("%s%s", "-", var.env) : var.env}-alarm"
   comparison_operator = "LessThanThreshold"
   evaluation_periods  = "2"
   metric_name         = "MemoryUtilization"
@@ -36,7 +36,7 @@ resource "aws_cloudwatch_metric_alarm" "task-count-alarm" {
 }
 
 resource "aws_cloudwatch_metric_alarm" "cpu-utilization-alarm" {
-  alarm_name          = "cpuUtilization-${var.service_name}${var.env != null ? format("%s/%s", "-", var.env) : var.env}-alarm"
+  alarm_name          = "cpuUtilization-${var.service_name}${var.env != null ? format("%s%s", "-", var.env) : var.env}-alarm"
   comparison_operator = "GreaterThanThreshold"
   evaluation_periods  = "2"
   metric_name         = "CPUUtilization"
