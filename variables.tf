@@ -18,13 +18,13 @@ variable "sns_arn" {
 
 variable "cluster_name" {
   type        = string
-  description = "Cluster name of ECS service to be alerted on (Example: puppies-production)"
+  description = "Cluster name of ECS service to be alerted on (Example: service-production)"
   default     = "service-production"
 }
 
 variable "service_name" {
   type        = string
-  description = "Service name of ECS service to be alerted on (Example: puppies-api, puppies-job_queue)"
+  description = "Service name of ECS service to be alerted on (Example: appname-api, appname-job_queue)"
   default     = "appname-api"
 }
 
@@ -44,4 +44,10 @@ variable "alert_email" {
   type        = string
   description = "Specify the email you'd like the alerts to go to (Unneccessary if create_sns_subscription is false)"
   default     = "alerts@synapsestudios.com"
+}
+
+variable "env" {
+  type        = string
+  description = "Specify the environment you're deploying to (Example: staging, dev, test) (leave null for production)"
+  default     = null
 }
