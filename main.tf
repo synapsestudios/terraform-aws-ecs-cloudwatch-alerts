@@ -27,6 +27,7 @@ resource "aws_cloudwatch_metric_alarm" "task-count-alarm" {
   threshold           = var.desired_task_threshold
   alarm_description   = "This metric monitors current running task count for the ${var.service_name} Service"
   actions_enabled     = "true"
+  treat_missing_data  = "breaching"
   alarm_actions       = var.use_sns ? [var.sns_arn] : []
   ok_actions          = var.use_sns ? [var.sns_arn] : []
   dimensions = {
@@ -46,6 +47,7 @@ resource "aws_cloudwatch_metric_alarm" "cpu-utilization-alarm" {
   threshold           = var.cpu_utilization_threshold
   alarm_description   = "This metric monitors current CPU utilization for the ${var.service_name} Service"
   actions_enabled     = "true"
+  treat_missing_data  = "breaching"
   alarm_actions       = var.use_sns ? [var.sns_arn] : []
   ok_actions          = var.use_sns ? [var.sns_arn] : []
   dimensions = {
