@@ -47,8 +47,8 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_cloudwatch_alarm_cpu_arn"></a> [cloudwatch\_alarm\_cpu\_arn](#output\_cloudwatch\_alarm\_cpu\_arn) | Output aws cloudwatch alarm arn |
-| <a name="output_cloudwatch_alarm_cpu_id"></a> [cloudwatch\_alarm\_cpu\_id](#output\_cloudwatch\_alarm\_cpu\_id) | n/a |
-| <a name="output_cloudwatch_alarm_task_arn"></a> [cloudwatch\_alarm\_task\_arn](#output\_cloudwatch\_alarm\_task\_arn) | n/a |
-| <a name="output_cloudwatch_alarm_task_id"></a> [cloudwatch\_alarm\_task\_id](#output\_cloudwatch\_alarm\_task\_id) | n/a |
+| <a name="output_cloudwatch_alarm_cpu_arn"></a> [cloudwatch\_alarm\_cpu\_arn](#output\_cloudwatch\_alarm\_cpu\_arn) | ARN of the CPU utilization alarm. |
+| <a name="output_cloudwatch_alarm_cpu_id"></a> [cloudwatch\_alarm\_cpu\_id](#output\_cloudwatch\_alarm\_cpu\_id) | ID of the CPU utilization alarm. |
+| <a name="output_cloudwatch_alarm_task_arn"></a> [cloudwatch\_alarm\_task\_arn](#output\_cloudwatch\_alarm\_task\_arn) | ARN of the running task count alarm. |
+| <a name="output_cloudwatch_alarm_task_id"></a> [cloudwatch\_alarm\_task\_id](#output\_cloudwatch\_alarm\_task\_id) | ID of the running task count alarm. |
 <!-- END_TF_DOCS -->

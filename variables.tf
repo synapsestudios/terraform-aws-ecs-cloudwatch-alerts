@@ -1,11 +1,13 @@
 # Create variables here
 
 variable "create_sns_subscription" {
+  type        = bool
   description = "Set to true to create a sns subscription to the topic for created alarms"
   default     = true
 }
 
 variable "use_sns" {
+  type        = bool
   description = "Use SNS for notifications"
   default     = true
 }
