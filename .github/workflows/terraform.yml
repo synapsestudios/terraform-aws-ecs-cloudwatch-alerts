@@ -10,7 +10,7 @@ jobs:
   terraform-format-test:
     uses: ./.github/workflows/terraform_format.yml
   terraform-graph:
-    uses: synapsestudios/.github/.github/workflows/tf-graph.yml@master
+    uses: synapsestudios/.github/.github/workflows/tf-graph.yml@17a6beba140cbfc28009ef980bda6264feff4359 # master
     with:
       terraform_version: "1.3.7"
   terraform-docs:
